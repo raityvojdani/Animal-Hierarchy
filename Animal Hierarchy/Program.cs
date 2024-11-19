@@ -1,4 +1,4 @@
-﻿namespace Animal_Hierarchy;
+namespace Animal_Hierarchy;
 
 public class Program
 {
@@ -29,47 +29,47 @@ public class Animal
 {
     public string Name { get; set; }
     public int Age { get; set; }
-    public virtual void Eat() => Console.WriteLine($"{Name} is eating.");
-    public virtual void Sleep() => Console.WriteLine($"{Name} is sleeping.");
-    public virtual void MakeSound() => Console.WriteLine($"{Name} makes a sound.");
+    public virtual void Eat() { Console.WriteLine($"{Name} is eating."); }
+    public virtual void Sleep() { Console.WriteLine($"{Name} is sleeping.");}
+public virtual void MakeSound() { Console.WriteLine($"{Name} makes a sound."); }
 
 }
 
 public class Mammal : Animal
 {
     public bool WarmBlooded { get; set; }
-    public override void MakeSound() => Console.WriteLine($"{Name} makes a mammal sound.");
+    public override void MakeSound() { Console.WriteLine($"{Name} makes a mammal sound."); }
 
 }
 public class Dog : Mammal
 {
-    public override void MakeSound() => Console.WriteLine($"{Name} barks.");
+    public override void MakeSound() { Console.WriteLine($"{Name} barks.");}
 }
 
 public class Bird : Animal
 {
     public int EggsNumber { get; set; }
-    public virtual void Fly() => Console.WriteLine($"{Name} can fly.");
+    public virtual void Fly() { Console.WriteLine($"{Name} can fly."); }
 }
 
 
 public class Eagle : Bird
 {
-    public override void Fly() => Console.WriteLine($"{Name} flies high.");
+    public override void Fly() { Console.WriteLine($"{Name} flies high.");}
 }
 
 
 public class Fish : Animal
 {
     public bool CanSwim { get; set; }
-    public override void MakeSound() => Console.WriteLine($"{Name} makes no sound.");
+    public override void MakeSound() { Console.WriteLine($"{Name} makes no sound."); }
 
 }
 
 
 public class Shark : Fish
 {
-    public override void Eat() => Console.WriteLine($"{Name} is eating fish.");
+    public override void Eat()  {Console.WriteLine($"{Name} is eating fish.");}
 }
 
 
@@ -88,6 +88,6 @@ public class AnimalHandler<T> : ICovariant<T>, IContravariant<T>
     private T _animal;
 
     public T GetAnimal() { return _animal; }
-    public void SetAnimal(T animal) => _animal = animal;
+    public void SetAnimal(T animal) { _animal = animal; }
 
 }
