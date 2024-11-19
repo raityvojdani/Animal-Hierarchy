@@ -38,7 +38,7 @@ This project demonstrates a hierarchy of animal classes in C# using **Inheritanc
       public virtual void MakeSound() => Console.WriteLine($"{Name} makes a sound.");
   }
 
-## Example Usage
+### Example Usage
  ```csharp
 Animal dog = new Dog { Name = "Buddy", Age = 3, WarmBlooded = true };
 Animal eagle = new Eagle { Name = "Sky", Age = 5 };
