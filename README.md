@@ -37,3 +37,19 @@ This project demonstrates a hierarchy of animal classes in C# using **Inheritanc
       public virtual void Sleep() => Console.WriteLine($"{Name} is sleeping.");
       public virtual void MakeSound() => Console.WriteLine($"{Name} makes a sound.");
   }
+
+##Example Usage
+ ```csharp
+Animal dog = new Dog { Name = "Buddy", Age = 3, WarmBlooded = true };
+Animal eagle = new Eagle { Name = "Sky", Age = 5 };
+Animal shark = new Shark { Name = "Locy", Age = 8, CanSwim = true };
+
+dog.MakeSound();  // Output: Buddy barks.
+eagle.MakeSound(); // Output: Sky makes a sound.
+shark.Eat();       // Output: Locy is eating fish.
+
+// Covariance Example
+AnimalHandler<Dog> dogHandler = new AnimalHandler<Dog>();
+dogHandler.SetAnimal(new Dog { Name = "Buddy", Age = 3, WarmBlooded = true });
+ICovariant<Animal> animalCovariant = dogHandler;
+Console.WriteLine(animalCovariant.GetAnimal()?.Name); // Output: Buddy
